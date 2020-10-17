@@ -8,6 +8,12 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:directive": {
+          "prefix": "app"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -28,7 +34,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/normalize.css/normalize.css",
+              "src/stylesheets/styles.scss"
             ],
             "scripts": []
           },
@@ -40,11 +47,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -83,6 +94,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -106,7 +118,8 @@
               "e2e/tsconfig.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "**/environments/**"
             ]
           }
         },
@@ -124,5 +137,8 @@
         }
       }
     }},
-  "defaultProject": "social-viz"
+  "defaultProject": "social-viz",
+  "cli": {
+    "analytics": false
+  }
 }

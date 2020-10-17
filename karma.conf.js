@@ -17,7 +17,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/social-viz'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['html', 'lcovonly', 'text', 'text-summary'],
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
