@@ -1,0 +1,21 @@
+/*
+ * File Created: Saturday, 17th October 2020 12:56:38 pm
+ * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
+ * -----
+ * Last Modified: Saturday, 17th October 2020 12:58:33 pm
+ * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
+ * -----
+ */
+@import 'variables';
+
+@mixin shadow {
+  box-shadow: 0px 0px 5px var(--theme-border-800);
+}
+
+@mixin vertical-shadow {
+  box-shadow: 0px 3px 5px var(--theme-border-800);
+}
+
+@mixin rounded {
+  border-radius: $border-radius;
+}

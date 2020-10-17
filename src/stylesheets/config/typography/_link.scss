@@ -1,0 +1,21 @@
+/*
+ * File Created: Saturday, 17th October 2020 1:06:45 pm
+ * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
+ * -----
+ * Last Modified: Saturday, 17th October 2020 1:13:44 pm
+ * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
+ * -----
+ */
+a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: .15s;
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
