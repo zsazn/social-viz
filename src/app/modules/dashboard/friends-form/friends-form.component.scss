@@ -1,0 +1,16 @@
+/*
+ * File Created: Saturday, 17th October 2020 3:47:28 pm
+ * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
+ * -----
+ * Last Modified: Saturday, 17th October 2020 4:50:45 pm
+ * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
+ * -----
+ */
+@import '~src/stylesheets/config/globals/all';
+
+.friends-form {
+  width: 38rem;
+  height: 46rem;
+  @include shadow;
+  @include rounded;
+}
