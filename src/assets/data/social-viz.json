@@ -1,0 +1,204 @@
+{
+	"data": [
+		{
+			"name": "Nimra Gardiner",
+			"age": 13,
+			"weight": 80,
+			"friends": [
+				"Dione Meyers",
+				"Marius Carty"
+			]
+		},
+		{
+			"name": "Scarlet Ahmed",
+			"age": 16,
+			"weight": 110,
+			"friends": [
+				"Monty Koch",
+				"Marius Carty"
+			]
+		},
+		{
+			"name": "Dione Meyers",
+			"age": 15,
+			"weight": 99,
+			"friends": [
+				"Nimra Gardiner",
+				"Dilan Ware"
+			]
+		},
+		{
+			"name": "Marius Carty",
+			"age": 17,
+			"weight": 150,
+			"friends": [
+				"Nimra Gardiner",
+				"Ravinder Mooney",
+				"Scarlet Ahmed"
+			]
+		},
+		{
+			"name": "Monty Koch",
+			"age": 16,
+			"weight": 110,
+			"friends": [
+				"Scarlet Ahmed",
+				"Marius Carty"
+			]
+		},
+		{
+			"name": "Eshal Collins",
+			"age": 17,
+			"weight": 120,
+			"friends": [
+				"Kaylen Welsh",
+				"Jaiden Truong",
+				"Erica Bernal"
+			]
+		},
+		{
+			"name": "Ravinder Mooney",
+			"age": 22,
+			"weight": 160,
+			"friends": [
+				"Marius Carty",
+				"Eshal Collins",
+				"Gaia Carpenter"
+			]
+		},
+		{
+			"name": "Kaylen Welsh",
+			"age": 25,
+			"weight": 140,
+			"friends": [
+				"Andreas Ochoa",
+				"Eshal Collins"
+			]
+		},
+		{
+			"name": "Andreas Ochoa",
+			"age": 33,
+			"weight": 138,
+			"friends": [
+				"Gaia Carpenter",
+				"Kaylen Welsh",
+				"Clayton Mccann"
+			]
+		},
+		{
+			"name": "Gaia Carpenter",
+			"age": 32,
+			"weight": 188,
+			"friends": [
+				"Ravinder Mooney",
+				"Andreas Ochoa",
+				"Reo Adams",
+				"Kaylen Welsh"
+			]
+		},
+		{
+			"name": "Zain Wardle",
+			"age": 32,
+			"weight": 154,
+			"friends": [
+				"Sky Lynn",
+				"Bert Sharples",
+				"Carter Townsend"
+			]
+		},
+		{
+			"name": "Reo Adams",
+			"age": 30,
+			"weight": 198,
+			"friends": [
+				"Gaia Carpenter",
+				"Bert Sharples",
+				"Jemima Rivera",
+				"Erica Bernal"
+			]
+		},
+		{
+			"name": "Bert Sharples",
+			"age": 35,
+			"weight": 168,
+			"friends": [
+				"Zain Wardle",
+				"Reo Adams",
+				"Aleeza William"
+			]
+		},
+		{
+			"name": "Shae Sellers",
+			"age": 38,
+			"weight": 121,
+			"friends": [
+				"Aleeza William",
+				"Amaan Price",
+				"Sky Lynn"
+			]
+		},
+		{
+			"name": "Sky Lynn",
+			"age": 36,
+			"weight": 133,
+			"friends": [
+				"Aleeza William",
+				"Amaan Price",
+				"Shae Sellers",
+				"Carter Townsend",
+				"Isabella Sweet"
+			]
+		},
+		{
+			"name": "Aleeza William",
+			"age": 45,
+			"weight": 142,
+			"friends": [
+				"Sky Lynn",
+				"Shae Sellers",
+				"Amaan Price"
+			]
+		},
+		{
+			"name": "Amaan Price",
+			"age": 48,
+			"weight": 139,
+			"friends": [
+				"Sky Lynn",
+				"Shae Sellers",
+				"Aleeza William"
+			]
+		},
+		{
+			"name": "Clayton Mccann",
+			"age": 44,
+			"weight": 160,
+			"friends": [
+				"Carter Townsend",
+				"Chelsie Graham",
+				"Andreas Ochoa",
+				"Amaya Povey"
+			]
+		},
+		{
+			"name": "Carter Townsend",
+			"age": 52,
+			"weight": 190,
+			"friends": [
+				"Clayton Mccann",
+				"Sky Lynn",
+				"Zain Wardle"
+			]
+		},
+		{
+			"name": "Chelsie Graham",
+			"age": 40,
+			"weight": 150,
+			"friends": [
+				"Clayton Mccann",
+				"Zain Wardle",
+				"Sameera O'Moore"
+			]
+		}
+	]
+}
