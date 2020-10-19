@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 3:38:45 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 12:47:00 am
+ * Last Modified: Monday, 19th October 2020 9:07:00 am
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
@@ -21,6 +22,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,
+    OverlayModule,
     ScrollingModule
   ],
   exports: [
@@ -28,6 +30,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,
+    OverlayModule,
     ScrollingModule
   ]
 })

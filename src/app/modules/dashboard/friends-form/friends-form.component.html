@@ -1,32 +1,36 @@
 <div class="friends-form">
-  <div class="title"></div>
-  <div class="form">
+  <div class="friends-form__title">You and your friends</div>
+  <div class="friends-form__form">
     <form [formGroup]="friendsForm" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label class="label">Your name</mat-label>
-        <input matInput formControlName="name" type="text" placeholder="John Smith">
-        <mat-error *ngIf="name.invalid">{{ error.name }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label class="label">Your age</mat-label>
-        <input matInput formControlName="age" type="number" placeholder="25">
-        <mat-error *ngIf="age.invalid">{{ error.age }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label class="label">Your weight</mat-label>
-        <input matInput formControlName="weight" type="number" placeholder="150">
-        <span matSuffix>lb</span>
-        <mat-error *ngIf="weight.invalid">{{ error.weight }}</mat-error>
-      </mat-form-field>
-      <div >
-        <mat-form-field formArrayName="friends" *ngFor="let friend of friends.controls; let i = index">
-          <mat-label class="label">{{ 'Name of friend # ' + (i + 1) }}</mat-label>
-          <input matInput [formControlName]="i" type="text" placeholder="Jack Ryan">
+      <div class="fields-wrapper">
+        <mat-form-field>
+          <mat-label class="label">Your name</mat-label>
+          <input matInput formControlName="name" type="text" placeholder="John Smith">
+          <mat-error *ngIf="name.invalid">{{ error.name }}</mat-error>
         </mat-form-field>
+        <mat-form-field>
+          <mat-label class="label">Your age</mat-label>
+          <input matInput formControlName="age" type="number" placeholder="25">
+          <mat-error *ngIf="age.invalid">{{ error.age }}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="label">Your weight</mat-label>
+          <input matInput formControlName="weight" type="number" placeholder="150">
+          <span matSuffix>lb</span>
+          <mat-error *ngIf="weight.invalid">{{ error.weight }}</mat-error>
+        </mat-form-field>
+        <div class="friends-fields-wrapper">
+          <mat-form-field formArrayName="friends" *ngFor="let friend of friends.controls; let i = index">
+            <mat-label class="label">{{ 'Name of friend # ' + (i + 1) }}</mat-label>
+            <input matInput [formControlName]="i" type="text" placeholder="Jack Ryan">
+          </mat-form-field>
+        </div>
       </div>
-      <button mat-raised-button color="accent" type="button" (click)="addFriend()">Add friend</button>
-      <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!friendsForm.valid">Submit</button>
-      <button mat-stroked-button color="warn" type="reset" (click)="resetForm()">Reset</button>
+      <div class="button-wrapper">
+        <button mat-raised-button color="accent" type="button" (click)="addFriend()">Add friend</button>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!friendsForm.valid">Submit</button>
+        <button mat-stroked-button color="warn" type="reset" (click)="resetForm()">Reset</button>
+      </div>
     </form>
   </div>
 </div>

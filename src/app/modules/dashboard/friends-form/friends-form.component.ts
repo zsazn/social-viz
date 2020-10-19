@@ -2,15 +2,16 @@
  * File Created: Saturday, 17th October 2020 3:47:28 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 1:47:02 pm
+ * Last Modified: Monday, 19th October 2020 11:37:32 am
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { addRecord } from '../../../app.actions';
 import { ERROR_AGE_REQUIRED, ERROR_NAME_REQUIRED, ERROR_WEIGHT_REQUIRED } from '../../../../constants/app-constants';
+import { Utils } from '../dashboard.utils';
 import { FormData, FormError } from '../../../../typings';
 
 @Component({
@@ -19,6 +20,7 @@ import { FormData, FormError } from '../../../../typings';
   styleUrls: ['./friends-form.component.scss']
 })
 export class FriendsFormComponent implements OnInit {
+  @Output() submitted: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public friendsForm!: FormGroup;
   public error: FormError = {
@@ -29,7 +31,7 @@ export class FriendsFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<{form: FormData[]}>
+    private store: Store<{data: FormData[]}>
   ) {
     this.friendsForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -64,6 +66,7 @@ export class FriendsFormComponent implements OnInit {
 
   onSubmit(): void {
     this.dispatchAddRecord();
+    this.submitted.emit(true);
     this.resetForm();
   }
 
@@ -74,6 +77,6 @@ export class FriendsFormComponent implements OnInit {
   }
 
   dispatchAddRecord(): void {
-    this.store.dispatch(addRecord({payload: this.friendsForm.value}));
+    this.store.dispatch(addRecord({payload: {id: Utils.generateUniqueId(), ...this.friendsForm.value}}));
   }
 }
