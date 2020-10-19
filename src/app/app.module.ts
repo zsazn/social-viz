@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 11:26:35 am
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 12:42:37 pm
+ * Last Modified: Sunday, 18th October 2020 5:01:02 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -31,7 +31,7 @@ import { formReducer } from './app.reducers';
     AppRoutingModule,
     DashboardModule,
     SharedModule,
-    StoreModule.forRoot({form: formReducer}),
+    StoreModule.forRoot({data: formReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production

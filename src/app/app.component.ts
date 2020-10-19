@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 11:26:35 am
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 1:50:58 pm
+ * Last Modified: Sunday, 18th October 2020 4:26:39 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
-    private store: Store<{form: FormData[]}>,
+    private store: Store<{data: FormData[]}>,
     private loadDataService: LoadDataService
   ) {}
 
