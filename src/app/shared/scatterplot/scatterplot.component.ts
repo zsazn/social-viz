@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 3:03:37 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:34:10 pm
+ * Last Modified: Monday, 19th October 2020 4:43:31 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -52,8 +52,8 @@ export class ScatterplotComponent implements OnInit, OnChanges {
       changes.data.currentValue !== changes.data.previousValue) {
         this.init();
         this.setData(this.data);
-        this.drawChart();
         this.drawAxis();
+        this.drawChart();
         this.drawTitle();
       }
   }
@@ -117,12 +117,15 @@ export class ScatterplotComponent implements OnInit, OnChanges {
       .attr('transform', `translate (0, ${this.htmlElementHeight - this.margin.bottom})`)
       .call(this.xAxis);
     this.svg.select('.x-axis-container')
-      .selectAll('line, path')
-      .attr('stroke', '#708090');
+      .selectAll('path')
+      .attr('stroke', 'none');
+    this.svg.select('.x-axis-container')
+      .selectAll('line')
+      .attr('stroke', '#ccc');
     this.svg.select('.x-axis-container')
       .selectAll('text')
       .attr('font-size', 1.1 * this.rem)
-      .attr('fill', '#0a050c')
+      .attr('fill', '#888')
       .attr('text-anchor', 'middle');
     this.svg
       .append('g')
@@ -131,7 +134,8 @@ export class ScatterplotComponent implements OnInit, OnChanges {
       .call(this.yAxis);
     this.svg.select('.y-axis-container')
       .selectAll('line')
-      .attr('stroke', '#708090')
+      .attr('stroke', '#ccc')
+      .attr('stroke-width', 1)
       .attr('stroke-dasharray', .3 * this.rem);
     this.svg.select('.y-axis-container')
       .selectAll('path')
@@ -144,7 +148,7 @@ export class ScatterplotComponent implements OnInit, OnChanges {
     this.svg.select('.y-axis-container')
       .selectAll('text')
       .attr('font-size', 1.1 * this.rem)
-      .attr('fill', '#0a050c');
+      .attr('fill', '#888');
   }
 
   private drawChart(): void {
@@ -157,7 +161,7 @@ export class ScatterplotComponent implements OnInit, OnChanges {
       .data(this.data)
       .join('circle')
       .attr('class', 'data-point')
-      .attr('fill', 'cadetblue')
+      .attr('fill', '#00bcd4')
       .attr('r', 5)
       .attr('cx', (d: ScatterPlotDatum): number => this.xScale(d.x) as number)
       .attr('cy', (d: ScatterPlotDatum): number => this.yScale(d.y) as number)

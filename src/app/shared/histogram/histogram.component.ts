@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 3:03:47 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 3:41:59 pm
+ * Last Modified: Monday, 19th October 2020 4:42:34 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -55,8 +55,8 @@ export class HistogramComponent implements OnInit, OnChanges {
       changes.data.currentValue !== changes.data.previousValue) {
       this.init();
       this.setData(this.data);
-      this.drawChart();
       this.drawAxis();
+      this.drawChart();
       this.drawTitle();
     }
   }
@@ -109,7 +109,7 @@ export class HistogramComponent implements OnInit, OnChanges {
       .attr('y', d => this.yScale(d.length) as number)
       .attr('width', d => Math.max(0, this.xScale(d.x1 as number) as number - (this.xScale(d.x0 as number) as number) - 1))
       .attr('height', d => this.yScale(0) as number - (this.yScale(d.length) as number))
-      .attr('fill', 'cadetblue');
+      .attr('fill', '#00bcd4');
 
   }
 
@@ -133,11 +133,11 @@ export class HistogramComponent implements OnInit, OnChanges {
       .call(this.xAxis);
     this.svg.select('.x-axis-container')
       .selectAll('line, path')
-      .attr('stroke', '#708090');
+      .attr('stroke', '#ccc');
     this.svg.select('.x-axis-container')
       .selectAll('text')
       .attr('font-size', 1.1 * this.rem)
-      .attr('fill', '#0a050c')
+      .attr('fill', '#888')
       .attr('text-anchor', 'middle');
     this.svg
       .append('g')
@@ -146,7 +146,7 @@ export class HistogramComponent implements OnInit, OnChanges {
       .call(this.yAxis);
     this.svg.select('.y-axis-container')
       .selectAll('line')
-      .attr('stroke', '#708090')
+      .attr('stroke', '#ccc')
       .attr('stroke-dasharray', .3 * this.rem);
     this.svg.select('.y-axis-container')
       .selectAll('path')
@@ -159,7 +159,7 @@ export class HistogramComponent implements OnInit, OnChanges {
     this.svg.select('.y-axis-container')
       .selectAll('text')
       .attr('font-size', 1.1 * this.rem)
-      .attr('fill', '#0a050c');
+      .attr('fill', '#888');
   }
 
   private drawTitle(): void {

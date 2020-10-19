@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 3:03:13 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:35:12 pm
+ * Last Modified: Monday, 19th October 2020 4:42:31 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -225,7 +225,6 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
     function dragged(event: any): void {
       event.subject.fx = event.x;
       event.subject.fy = event.y;
-      console.log(event);
     }
 
     function dragEnded(event: any): void {

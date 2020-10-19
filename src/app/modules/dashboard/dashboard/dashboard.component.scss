@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 3:47:18 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:32:51 pm
+ * Last Modified: Monday, 19th October 2020 4:36:15 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -14,6 +14,7 @@
   height: 100%;
   position: relative;
   padding: 1rem;
+  background-color: map-get($mat-light-theme-background, 'background');
   .overview-container {
     width: 100%;
     height: calc(20% - .5rem);
@@ -25,7 +26,7 @@
     .add-record-wrapper {
       width: 10%;
       height: 100%;
-      background-color: mat-color(mat-palette($mat-indigo));
+      @include card-primary;
       @include shadow;
       @include rounded;
       display: flex;
@@ -52,6 +53,7 @@
       width: 22.5%;
       height: 100%;
       flex: 1 1;
+      @include card-accent;
       @include shadow;
       @include rounded;
       &:not(:first-of-type) {
@@ -70,6 +72,7 @@
       width: calc(75% - .5rem);
       height: calc(100% - .5rem);
       margin: .5rem .5rem 0 0;
+      @include card-white;
       @include shadow;
       @include rounded;
     }
@@ -81,6 +84,7 @@
       flex-flow: column nowrap;
       justify-content: space-between;
       align-items: center;
+      @include card-white;
       @include shadow;
       @include rounded;
       .scatterplot {

@@ -2,7 +2,7 @@
  * File Created: Monday, 18th October 2020 4:51:50 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:36:00 pm
+ * Last Modified: Monday, 19th October 2020 4:38:21 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -17,9 +17,11 @@
   .overview-data {
     font-size: 6rem;
     font-weight: 700;
-    color: cadetblue;
+    color: var(--theme-text);
   }
   .overview-desc {
     font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--theme-text);
   }
 }

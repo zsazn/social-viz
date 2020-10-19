@@ -2,14 +2,15 @@
  * File Created: Saturday, 17th October 2020 12:56:38 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:21:21 pm
+ * Last Modified: Monday, 19th October 2020 4:36:15 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
 @import 'variables';
+@import '~@angular/material/theming';
 
 @mixin shadow {
-  box-shadow: 0px 0px 5px var(--theme-border);
+  box-shadow: 0px 0px 3px var(--theme-border-light), 0px 0px 5px var(--theme-border-light);
 }
 
 @mixin vertical-shadow {
@@ -18,4 +19,16 @@
 
 @mixin rounded {
   border-radius: $border-radius;
+}
+
+@mixin card-white {
+  background-color: map-get($mat-light-theme-background, 'card');
+}
+
+@mixin card-primary {
+  background-color: mat-color(mat-palette($mat-blue));
+}
+
+@mixin card-accent {
+  background-color: mat-color(mat-palette($mat-cyan), 400);
 }
