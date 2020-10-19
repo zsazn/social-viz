@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 4:25:04 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 3:40:40 am
+ * Last Modified: Monday, 19th October 2020 3:46:17 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -18,6 +18,14 @@ export class DashboardService {
   constructor(
   ) { }
 
+  /**
+   * To map FormData array to ScatterPlotDatum array
+   * Transform state to scatter plot data format
+   *
+   * @param {FormData[]} data
+   * @returns {ScatterPlotDatum[]}
+   * @memberof DashboardService
+   */
   getScatterplotData(data: FormData[]): ScatterPlotDatum[] {
     if (!data || data.length === 0) {
       return [];
@@ -25,6 +33,14 @@ export class DashboardService {
     return data.map(d => ({ x: d.age, y: d.weight }));
   }
 
+  /**
+   * To map FormData array to NetworkData
+   * Transform state to force directed graph nodes and links
+   *
+   * @param {FormData[]} data
+   * @returns {NetworkData}
+   * @memberof DashboardService
+   */
   getNetworkData(data: FormData[]): NetworkData {
     if (!data || data.length === 0) {
       return { nodes: [], links: [] };
@@ -34,14 +50,28 @@ export class DashboardService {
     return {nodes, links};
   }
 
+  /**
+   * Calculate nodes for force directed network graph
+   * Assumptions:
+   * 1. Identical name yields two different records
+   * 2. Identical friend's names yields the same friend
+   *
+   * @private
+   * @param {FormData[]} data
+   * @returns {NetworkNode[]}
+   * @memberof DashboardService
+   */
   private getNodes(data: FormData[]): NetworkNode[] {
+    // get all records from current state and map them to `nodes` array
     const nodes: NetworkNode[] = data.map((d: FormData) => ({
       id: d.id,
       name: d.name,
       age: d.age,
       weight: d.weight
      }));
+    // create a set for all current unique names
     const existingNames: Set<string> = new Set<string>(data.map(d => d.name));
+    // get unique names from every person's friend list
     data.forEach((d: FormData) => {
       d.friends.forEach((f: string) => {
         if (!existingNames.has(f)) {
@@ -49,7 +79,7 @@ export class DashboardService {
           nodes.push({
             id: Utils.generateUniqueId(),
             name: f,
-            friendOnly: true
+            friendOnly: true // flag the node is only friend of someone
           });
         }
       });
@@ -57,9 +87,19 @@ export class DashboardService {
     return nodes;
   }
 
+  /**
+   * Calculate links fro force directed network graph
+   *
+   * @private
+   * @param {FormData[]} data
+   * @param {NetworkNode[]} nodes
+   * @returns {NetworkLink[]}
+   * @memberof DashboardService
+   */
   private getLinks(data: FormData[], nodes: NetworkNode[]): NetworkLink[] {
     const links: NetworkLink[] = [];
     const map: Map<string, string[] | undefined> = new Map();
+    // map id list to each node name
     nodes.forEach((node: NetworkNode) => {
       if (!map.get(node.name)) {
         const idList: string[] = [];
@@ -72,6 +112,8 @@ export class DashboardService {
       }
     });
 
+    // source: each person's name (node)
+    // target: a friend only node, or another person's node
     data.forEach((d: FormData) => {
       d.friends.forEach((f: string) => {
         const idList: string[] | undefined = map.get(f);

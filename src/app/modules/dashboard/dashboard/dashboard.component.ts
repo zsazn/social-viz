@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 3:47:18 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 1:42:20 pm
+ * Last Modified: Monday, 19th October 2020 3:11:25 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -19,15 +19,15 @@ import { DashboardService } from '../dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  public networkData!: NetworkData;
-  public scatterplotData!: ScatterPlotDatum[];
-  public ageDistData!: number[];
-  public weightDistData!: number[];
+  public networkData!: NetworkData; // data for force directed graph
+  public scatterplotData!: ScatterPlotDatum[]; // data for age-weight scatterplot
+  public ageDistData!: number[]; // all on-record age
+  public weightDistData!: number[]; // all on-record weight
 
-  public totalRecord!: number;
-  public totalHeadCount!: number;
-  public avgAge!: number;
-  public avgWeight!: number;
+  public totalRecord!: number; // total record number in current state
+  public totalHeadCount!: number; // total number of people, including who filled out the form and all friends
+  public avgAge!: number; // average age of who filled out the form
+  public avgWeight!: number; // average weight of who filled out the form
 
   public overlayPosition: ConnectedPosition[] = [{
     originX: 'start',
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.store.select('data').subscribe(state => {
+    this.store.select('data').subscribe(state => { // subscribe to store and select 'data' state
       if (state && state.length > 0) {
         this.ageDistData = state.map(d => d.age);
         this.weightDistData = state.map(d => d.weight);

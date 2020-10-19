@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 3:47:28 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 11:37:32 am
+ * Last Modified: Monday, 19th October 2020 3:11:25 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -37,7 +37,7 @@ export class FriendsFormComponent implements OnInit {
       name: ['', Validators.required],
       age: ['', Validators.required],
       weight: ['', Validators.required],
-      friends: new FormArray([new FormControl('')])
+      friends: new FormArray([new FormControl('')]) // initializing a form array of one form control field
     });
   }
 
@@ -60,23 +60,26 @@ export class FriendsFormComponent implements OnInit {
     return this.friendsForm.get('friends') as FormArray;
   }
 
+  // add an additional field to friends form array
   addFriend(): void {
     this.friends.push(this.formBuilder.control(''));
   }
 
   onSubmit(): void {
-    this.dispatchAddRecord();
-    this.submitted.emit(true);
-    this.resetForm();
+    this.dispatchAddRecord(); // dispatch Add_record action
+    this.submitted.emit(true); // emit to close the overlay
+    this.resetForm(); // reset form
   }
 
   resetForm(): void {
-    this.friends.clear();
-    this.friendsForm.reset();
-    this.friends.insert(0, new FormControl(''));
+    this.friends.clear(); // clear friends form array
+    this.friendsForm.reset(); // reset entire form group
+    this.friends.insert(0, new FormControl('')); // insert a blank field to friends form array
   }
 
   dispatchAddRecord(): void {
+    // dispatch an Add_record action with a payload
+    // payload has form group values and a unique id
     this.store.dispatch(addRecord({payload: {id: Utils.generateUniqueId(), ...this.friendsForm.value}}));
   }
 }

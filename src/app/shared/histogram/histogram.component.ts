@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 3:03:47 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 2:34:14 pm
+ * Last Modified: Monday, 19th October 2020 3:41:59 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -81,7 +81,7 @@ export class HistogramComponent implements OnInit, OnChanges {
   }
 
   private setData(data: number[]): void {
-    this.bins =  d3.bin().thresholds(5)(data);
+    this.bins =  d3.bin().thresholds(8)(data);
     this.setScale(this.bins);
   }
 
@@ -114,7 +114,7 @@ export class HistogramComponent implements OnInit, OnChanges {
   }
 
   private drawAxis(): void {
-    this.xAxis = d3.axisBottom(this.xScale).ticks(5).tickSize(0);
+    this.xAxis = d3.axisBottom(this.xScale).ticks(8).tickSize(0);
     this.yAxis = d3.axisLeft(this.yScale)
       .ticks(5)
       .tickSizeInner(this.margin.left + this.margin.right - this.htmlElementWidth)

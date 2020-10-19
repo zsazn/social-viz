@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 11:26:35 am
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 4:26:39 pm
+ * Last Modified: Monday, 19th October 2020 3:47:55 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -29,11 +29,12 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // preload some mock data for visualization purpose on app init
     this.loadDataService.loadData().pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(res => {
       this.data = res as FormData[];
-      this.dispatchLoadData();
+      this.dispatchLoadData(); // dispatch Load_data action
     });
   }
 
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   dispatchLoadData(): void {
+    // dispatch Load_data action with a payload of preloaded data
     this.store.dispatch(loadData({payload: this.data}));
   }
 }
