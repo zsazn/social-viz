@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 4:25:04 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 3:46:17 pm
+ * Last Modified: Monday, 19th October 2020 5:45:30 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -106,6 +106,7 @@ export class DashboardService {
         idList.push(node.id);
         map.set(node.name, idList);
       } else {
+        // process duplicated names
         const idList: string[] | undefined = map.get(node.name);
         idList?.push(node.name);
         map.set(node.name, idList);

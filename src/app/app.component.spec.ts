@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 11:26:35 am
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Sunday, 18th October 2020 2:26:00 pm
+ * Last Modified: Monday, 19th October 2020 5:47:58 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -46,6 +46,7 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    app.ngOnInit();
     expect(app).toBeTruthy();
   });
 });
