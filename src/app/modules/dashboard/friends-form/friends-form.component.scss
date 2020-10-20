@@ -2,7 +2,7 @@
  * File Created: Saturday, 17th October 2020 3:47:28 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 11:34:28 am
+ * Last Modified: Monday, 19th October 2020 7:21:41 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -59,7 +59,7 @@
         height: 4rem;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         button {
           width: 30%;

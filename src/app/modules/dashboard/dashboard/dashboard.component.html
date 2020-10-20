@@ -31,23 +31,25 @@
     </div>
     <div class="statistical-graph">
       <div class="scatterplot">
-        <app-scatterplot [data]="scatterplotData"></app-scatterplot>
+        <app-scatterplot
+          [data]="scatterplotData"
+          [chartTitle]="'Age vs. Weight'"
+          [xAxisLabel]="'Age'"
+          [yAxisLabel]="'Weight(lb)'"></app-scatterplot>
       </div>
-      <div class="histograms">
-        <div class="histogram">
-          <app-histogram
-            [data]="ageDistData"
-            [chartTitle]="'Age Distribution'"
-            [xAxisLabel]="'Age'"
-            [yAxisLabel]="'HC'"></app-histogram>
-        </div>
-        <div class="histogram">
-          <app-histogram
-            [data]="weightDistData"
-            [chartTitle]="'Weight Distribution'"
-            [xAxisLabel]="'Weight'"
-            [yAxisLabel]="'HC'"></app-histogram>
-        </div>
+      <div class="histogram">
+        <app-histogram
+          [data]="ageDistData"
+          [chartTitle]="'Age Distribution'"
+          [xAxisLabel]="'Age'"
+          [yAxisLabel]="'HC'"></app-histogram>
+      </div>
+      <div class="histogram">
+        <app-histogram
+          [data]="weightDistData"
+          [chartTitle]="'Weight Distribution'"
+          [xAxisLabel]="'Weight(lb)'"
+          [yAxisLabel]="'HC'"></app-histogram>
       </div>
     </div>
   </div>

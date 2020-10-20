@@ -2,7 +2,7 @@
  * File Created: Sunday, 18th October 2020 3:03:13 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 4:42:31 pm
+ * Last Modified: Monday, 19th October 2020 7:53:52 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
@@ -72,8 +72,8 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
 
   private init(): void {
     this.htmlElement = this.elementRef.nativeElement.querySelector('.forced-network-graph-container') as HTMLElement;
-    this.htmlElementWidth = this.htmlElement.getBoundingClientRect().width;
-    this.htmlElementHeight = this.htmlElement.getBoundingClientRect().height;
+    this.htmlElementWidth = this.htmlElement.getBoundingClientRect().width || 400;
+    this.htmlElementHeight = this.htmlElement.getBoundingClientRect().height || 300;
     this.rem = parseFloat(getComputedStyle(document.querySelector('body') as HTMLElement).fontSize.slice(0, -2));
 
     if (this.svg) {
@@ -107,9 +107,10 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
     const links = this.links.map(d => Object.create(d));
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(d => (d as NetworkNode).id))
-      .force('charge', d3.forceManyBody().strength(-100))
+      .force('charge', d3.forceManyBody().strength(-this.htmlElementWidth / 5))
       .force('collision', d3.forceCollide().radius(10))
-      .force('center', d3.forceCenter(this.htmlElementWidth / 2, this.htmlElementHeight / 2));
+      .force('center', d3.forceCenter(this.htmlElementWidth / 2, this.htmlElementHeight / 2))
+      .alpha(.2);
     const linksContainer = this.svg.append('g').attr('class', 'links-container');
     const nodesContainer = this.svg.append('g').attr('class', 'nodes-container');
     const linksGraph = linksContainer.selectAll('line')
@@ -124,7 +125,7 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
       .call(this.drag(simulation));
     const circles = nodeContainer
       .append('circle')
-      .attr('r', (d: NetworkNode) => d.friendOnly ? 8 : 15)
+      .attr('r', (d: NetworkNode) => d.friendOnly ? 5 : 10)
       .attr('fill', (d: NetworkNode) => d.friendOnly ? '#708090' : '#00bfff')
       .attr('stroke', (d: NetworkNode) => d.friendOnly ? null : '#87cefa')
       .attr('stroke-width', (d: NetworkNode) => d.friendOnly ? 0 : 3);
@@ -145,7 +146,7 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
         .attr('x2', d => d.target.x)
         .attr('y2', d => d.target.y);
       labels
-        .attr('x', d => d.x + 15)
+        .attr('x', d => d.x + (d.friendOnly ? 8 : 13))
         .attr('y', d => d.y)
         .attr('dominant-baseline', 'central');
     });
@@ -165,7 +166,7 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
     legendContainer
       .selectAll('.person-legend')
       .append('circle')
-      .attr('r', 15)
+      .attr('r', 10)
       .attr('cx', 15)
       .attr('cy', 0)
       .attr('fill', '#00bfff')
@@ -182,7 +183,7 @@ export class ForceDirectedGraphComponent implements OnInit, OnChanges {
     legendContainer
       .selectAll('.friend-only-legend')
       .append('circle')
-      .attr('r', 8)
+      .attr('r', 5)
       .attr('cx', 15)
       .attr('cy', 50)
       .attr('fill', '#708090');

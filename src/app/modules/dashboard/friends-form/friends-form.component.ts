@@ -2,16 +2,17 @@
  * File Created: Saturday, 17th October 2020 3:47:28 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 3:11:25 pm
+ * Last Modified: Monday, 19th October 2020 7:50:27 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { addRecord } from '../../../app.actions';
 import { ERROR_AGE_REQUIRED, ERROR_NAME_REQUIRED, ERROR_WEIGHT_REQUIRED } from '../../../../constants/app-constants';
-import { Utils } from '../dashboard.utils';
+import Utils from '../dashboard.utils';
 import { FormData, FormError } from '../../../../typings';
 
 @Component({
@@ -31,7 +32,8 @@ export class FriendsFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<{data: FormData[]}>
+    private store: Store<{data: FormData[]}>,
+    private snackBar: MatSnackBar
   ) {
     this.friendsForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -69,6 +71,9 @@ export class FriendsFormComponent implements OnInit {
     this.dispatchAddRecord(); // dispatch Add_record action
     this.submitted.emit(true); // emit to close the overlay
     this.resetForm(); // reset form
+    const config = new MatSnackBarConfig();
+    config.duration = 2000;
+    this.snackBar.open('New record added!', undefined, config);
   }
 
   resetForm(): void {
@@ -80,6 +85,7 @@ export class FriendsFormComponent implements OnInit {
   dispatchAddRecord(): void {
     // dispatch an Add_record action with a payload
     // payload has form group values and a unique id
+    this.friendsForm.value.friends = this.friendsForm.value.friends.filter((f: string) => f !== '');
     this.store.dispatch(addRecord({payload: {id: Utils.generateUniqueId(), ...this.friendsForm.value}}));
   }
 }

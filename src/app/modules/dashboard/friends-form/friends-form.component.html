@@ -24,12 +24,12 @@
             <mat-label class="label">{{ 'Name of friend # ' + (i + 1) }}</mat-label>
             <input matInput [formControlName]="i" type="text" placeholder="Jack Ryan">
           </mat-form-field>
+          <button mat-raised-button color="accent" type="button" (click)="addFriend()">Add friend</button>
         </div>
       </div>
       <div class="button-wrapper">
-        <button mat-raised-button color="accent" type="button" (click)="addFriend()">Add friend</button>
-        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!friendsForm.valid">Submit</button>
         <button mat-stroked-button color="warn" type="reset" (click)="resetForm()">Reset</button>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!friendsForm.valid">Submit</button>
       </div>
     </form>
   </div>

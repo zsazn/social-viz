@@ -2,12 +2,13 @@
  * File Created: Saturday, 17th October 2020 3:47:18 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 6:11:21 pm
+ * Last Modified: Monday, 19th October 2020 6:31:14 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { SharedModule } from '../../../shared/shared.module';
 import { MaterialModule } from '../../../shared/material/material.module';
 import { DashboardComponent } from './dashboard.component';
 
@@ -73,7 +74,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MaterialModule ],
+      imports: [ SharedModule, MaterialModule ],
       declarations: [ DashboardComponent ],
       providers: [ provideMockStore({ initialState }) ]
     })

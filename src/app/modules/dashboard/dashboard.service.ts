@@ -2,13 +2,13 @@
  * File Created: Sunday, 18th October 2020 4:25:04 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 5:45:30 pm
+ * Last Modified: Monday, 19th October 2020 6:19:18 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
 import { Injectable } from '@angular/core';
 import { FormData, NetworkData, NetworkLink, NetworkNode, ScatterPlotDatum } from '../../../typings';
-import { Utils } from './dashboard.utils';
+import Utils from './dashboard.utils';
 
 @Injectable({
   providedIn: 'root'

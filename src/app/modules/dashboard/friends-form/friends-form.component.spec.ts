@@ -2,14 +2,16 @@
  * File Created: Saturday, 17th October 2020 3:47:28 pm
  * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
  * -----
- * Last Modified: Monday, 19th October 2020 6:00:11 pm
+ * Last Modified: Monday, 19th October 2020 8:02:32 pm
  * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
  * -----
  */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
+import { MaterialModule } from '../../../shared/material/material.module';
 import { FriendsFormComponent } from './friends-form.component';
 
 describe('FriendsFormComponent', () => {
@@ -21,7 +23,11 @@ describe('FriendsFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ ReactiveFormsModule ],
+      imports: [
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule
+      ],
       declarations: [ FriendsFormComponent ],
       providers: [ provideMockStore({ initialState }) ]
     }).compileComponents();
