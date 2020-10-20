@@ -1,0 +1,68 @@
+<div class="dashboard" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <div class="overview-container">
+    <div class="add-record-wrapper" (click)="openOverlay()">
+      <mat-icon aria-hidden="false" aria-label="Add record icon">add</mat-icon>
+      <div class="add-record-text">ADD RECORD</div>
+    </div>
+    <div class="overview">
+      <app-text-overview
+        [data]="totalRecord"
+        [desc]="'Total Record'"></app-text-overview>
+    </div>
+    <div class="overview">
+      <app-text-overview
+        [data]="totalHeadCount"
+        [desc]="'Total Head Count'"></app-text-overview>
+    </div>
+    <div class="overview">
+      <app-text-overview
+        [data]="avgAge"
+        [desc]="'Avg. Age'"></app-text-overview>
+    </div>
+    <div class="overview">
+      <app-text-overview
+        [data]="avgWeight"
+        [desc]="'Avg. Weight (lb)'"></app-text-overview>
+    </div>
+  </div>
+  <div class="graph">
+    <div class="network-graph">
+      <app-force-directed-graph [data]="networkData"></app-force-directed-graph>
+    </div>
+    <div class="statistical-graph">
+      <div class="scatterplot">
+        <app-scatterplot
+          [data]="scatterplotData"
+          [chartTitle]="'Age vs. Weight'"
+          [xAxisLabel]="'Age'"
+          [yAxisLabel]="'Weight(lb)'"></app-scatterplot>
+      </div>
+      <div class="histogram">
+        <app-histogram
+          [data]="ageDistData"
+          [chartTitle]="'Age Distribution'"
+          [xAxisLabel]="'Age'"
+          [yAxisLabel]="'HC'"></app-histogram>
+      </div>
+      <div class="histogram">
+        <app-histogram
+          [data]="weightDistData"
+          [chartTitle]="'Weight Distribution'"
+          [xAxisLabel]="'Weight(lb)'"
+          [yAxisLabel]="'HC'"></app-histogram>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template cdkConnectedOverlay
+  [cdkConnectedOverlayOpen]="overlayOpened"
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayPositions]="overlayPosition">
+  <div class="overlay">
+    <div class="close-button" (click)="closeOverlay()">
+      <mat-icon aria-hidden="false" aria-label="Close overlay icon">close</mat-icon>
+    </div>
+    <app-friends-form (submitted)="closeOverlay()"></app-friends-form>
+  </div>
+</ng-template>

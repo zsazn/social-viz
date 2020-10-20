@@ -1,0 +1,23 @@
+/*
+ * File Created: Saturday, 17th October 2020 11:26:35 am
+ * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
+ * -----
+ * Last Modified: Monday, 19th October 2020 10:00:28 am
+ * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
+ * -----
+ */
+@import '~src/stylesheets/config/globals/all';
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbfbfb;
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+}

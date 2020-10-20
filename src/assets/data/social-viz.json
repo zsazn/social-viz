@@ -1,0 +1,222 @@
+{
+  "data": [
+    {
+      "id": "7ygrx1r",
+      "name": "Nimra Gardiner",
+      "age": 13,
+      "weight": 80,
+      "friends": [
+        "Dione Meyers",
+        "Marius Carty"
+      ]
+    },
+    {
+      "id": "4e93de",
+      "name": "Scarlet Ahmed",
+      "age": 16,
+      "weight": 110,
+      "friends": [
+        "Monty Koch",
+        "Marius Carty"
+      ]
+    },
+    {
+      "id": "pkf1xxc",
+      "name": "Dione Meyers",
+      "age": 15,
+      "weight": 99,
+      "friends": [
+        "Nimra Gardiner",
+        "Dilan Ware"
+      ]
+    },
+    {
+      "id": "adb8xp",
+      "name": "Marius Carty",
+      "age": 17,
+      "weight": 150,
+      "friends": [
+        "Nimra Gardiner",
+        "Ravinder Mooney",
+        "Scarlet Ahmed"
+      ]
+    },
+    {
+      "id": "1vybagc",
+      "name": "Monty Koch",
+      "age": 16,
+      "weight": 110,
+      "friends": [
+        "Scarlet Ahmed",
+        "Marius Carty"
+      ]
+    },
+    {
+      "id": "80pwllk",
+      "name": "Eshal Collins",
+      "age": 17,
+      "weight": 120,
+      "friends": [
+        "Kaylen Welsh",
+        "Jaiden Truong"
+      ]
+    },
+    {
+      "id": "mtt13vb",
+      "name": "Ravinder Mooney",
+      "age": 22,
+      "weight": 160,
+      "friends": [
+        "Marius Carty",
+        "Eshal Collins",
+        "Gaia Carpenter"
+      ]
+    },
+    {
+      "id": "4bry1tm",
+      "name": "Kaylen Welsh",
+      "age": 25,
+      "weight": 140,
+      "friends": [
+        "Andreas Ochoa",
+        "Eshal Collins"
+      ]
+    },
+    {
+      "id": "z0hiuy7",
+      "name": "Andreas Ochoa",
+      "age": 33,
+      "weight": 138,
+      "friends": [
+        "Gaia Carpenter",
+        "Kaylen Welsh",
+        "Clayton Mccann"
+      ]
+    },
+    {
+      "id": "zmxjni3",
+      "name": "Gaia Carpenter",
+      "age": 32,
+      "weight": 188,
+      "friends": [
+        "Ravinder Mooney",
+        "Andreas Ochoa",
+        "Reo Adams",
+        "Kaylen Welsh"
+      ]
+    },
+    {
+      "id": "y9ge4kn",
+      "name": "Zain Wardle",
+      "age": 32,
+      "weight": 154,
+      "friends": [
+        "Sky Lynn",
+        "Bert Sharples",
+        "Carter Townsend"
+      ]
+    },
+    {
+      "id": "9mht0z",
+      "name": "Reo Adams",
+      "age": 30,
+      "weight": 198,
+      "friends": [
+        "Gaia Carpenter",
+        "Bert Sharples",
+        "Jemima Rivera",
+        "Erica Bernal"
+      ]
+    },
+    {
+      "id": "927yfe8",
+      "name": "Bert Sharples",
+      "age": 35,
+      "weight": 168,
+      "friends": [
+        "Zain Wardle",
+        "Reo Adams",
+        "Aleeza William"
+      ]
+    },
+    {
+      "id": "o3ta32q",
+      "name": "Shae Sellers",
+      "age": 38,
+      "weight": 121,
+      "friends": [
+        "Aleeza William",
+        "Amaan Price",
+        "Sky Lynn"
+      ]
+    },
+    {
+      "id": "d4r2li",
+      "name": "Sky Lynn",
+      "age": 36,
+      "weight": 133,
+      "friends": [
+        "Aleeza William",
+        "Amaan Price",
+        "Shae Sellers",
+        "Carter Townsend",
+        "Isabella Sweet"
+      ]
+    },
+    {
+      "id": "viwzlvd",
+      "name": "Aleeza William",
+      "age": 45,
+      "weight": 142,
+      "friends": [
+        "Sky Lynn",
+        "Shae Sellers",
+        "Amaan Price"
+      ]
+    },
+    {
+      "id": "ehy0ena",
+      "name": "Amaan Price",
+      "age": 48,
+      "weight": 139,
+      "friends": [
+        "Sky Lynn",
+        "Shae Sellers",
+        "Aleeza William"
+      ]
+    },
+    {
+      "id": "wwh1ds2",
+      "name": "Clayton Mccann",
+      "age": 44,
+      "weight": 160,
+      "friends": [
+        "Carter Townsend",
+        "Chelsie Graham",
+        "Andreas Ochoa"
+      ]
+    },
+    {
+      "id": "fwnysup",
+      "name": "Carter Townsend",
+      "age": 52,
+      "weight": 190,
+      "friends": [
+        "Clayton Mccann",
+        "Sky Lynn",
+        "Zain Wardle"
+      ]
+    },
+    {
+      "id": "vgbkki9",
+      "name": "Chelsie Graham",
+      "age": 40,
+      "weight": 150,
+      "friends": [
+        "Clayton Mccann",
+        "Zain Wardle",
+        "Sameera O'Moore"
+      ]
+    }
+  ]
+}

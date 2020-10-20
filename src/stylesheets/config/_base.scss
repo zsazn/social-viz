@@ -1,0 +1,25 @@
+/*
+ * File Created: Saturday, 17th October 2020 12:44:24 pm
+ * Author: Zheng Zhou (zhengzhou.purdue@gmail.com)
+ * -----
+ * Last Modified: Monday, 19th October 2020 2:21:21 pm
+ * Modified By: Zheng Zhou (zhengzhou.purdue@gmail.com>)
+ * -----
+ */
+*,
+*::before,
+*::after {
+  outline: none;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  font-size: 0.68vw;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  min-width: 1024px;
+  height: 100vh;
+  margin: auto;
+  background-color: var(--theme-bg);
+}
